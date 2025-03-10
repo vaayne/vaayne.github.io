@@ -1,0 +1,45 @@
+baseURL: https://vaayne.github.io/
+languageCode: en-us
+title: Vaayne's Tea House
+theme: PaperMod
+
+permalinks:
+  posts: /posts/:year/:slug/
+
+enableRobotsTXT: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  author: Vaayne
+  defaultTheme: auto
+  DateFormat: "2006-01-02"
+  # theme settings
+  ShowReadingTime: true 
+  ShowBreadCrumbs: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  ShowToc: true
+  enableEmoji: true
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: 欢迎来到 Vaayne 的茶馆，我是 Vaayne，一个热爱编程的程序员。这里是我的个人博客，记录我的学习和生活点滴。
+
+  ShareButtons: ["github", "twitter"]
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/vaayne"
+    - name: "twitter"
+      url: "https://twitter.com/LiuVaayne"
+    - name: "rss"
+      url: /index.xml

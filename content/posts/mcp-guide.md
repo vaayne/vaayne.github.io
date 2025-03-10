@@ -9,26 +9,6 @@ description = '深入解析模型上下文协议 (MCP) 的架构、工作原理�
 
 ## 引言
 模型上下文协议 (Model Context Protocol, MCP) 是近期 AI 领域的最热门的话题，它为大型语言模型提供了与外部世界交互的标准化方式。本文将深入介绍 MCP 的架构、工作原理、开发方法及其应用场景，帮助读者全面了解这一协议如何增强 AI 应用的能力和灵活性。
-- [引言](#引言)
-- [什么是 MCP](#什么是-mcp)
-  - [MCP 的架构](#mcp-的架构)
-- [为什么需要 MCP](#为什么需要-mcp)
-  - [MCP 和 Tool Call 的区别](#mcp-和-tool-call-的区别)
-- [MCP 协议讲解](#mcp-协议讲解)
-  - [传输协议](#传输协议)
-    - [stdio](#stdio)
-    - [sse](#sse)
-- [如何开发一个 MCP Server](#如何开发一个-mcp-server)
-  - [Prompts](#prompts)
-    - [Resources](#resources)
-    - [Tools](#tools)
-  - [完整示例代码](#完整示例代码)
-- [如何使用 MCP](#如何使用-mcp)
-  - [Cherry Studio 使用 MCP](#cherry-studio-使用-mcp)
-    - [配置 MCP Server](#配置-mcp-server)
-    - [使用 MCP Server](#使用-mcp-server)
-- [总结](#总结)
-- [资源与参考](#资源与参考)
 
 ## 什么是 MCP
 
