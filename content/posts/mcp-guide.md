@@ -1,6 +1,7 @@
 +++
-date = '2024-03-09T23:55:23+08:00'
+date = '2025-03-09T23:55:23+08:00'
 draft = false
+# slug = 'mcp-guide'
 title = 'MCP 协议完全指南'
 tags = ['AI', 'MCP', 'LLM', '开发']
 categories = ['技术']
