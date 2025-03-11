@@ -19,6 +19,7 @@ params:
   author: Vaayne
   defaultTheme: auto
   DateFormat: "2006-01-02"
+  comments: true
   # theme settings
   ShowReadingTime: true 
   ShowBreadCrumbs: true
