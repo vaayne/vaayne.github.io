@@ -150,9 +150,38 @@ SSE 类型的 MCP 服务配置简单，只需提供服务器的 URL。此类型�
 
 ## FAQ
 
-#### 网络不通怎么办？
+#### 如何解决网络问题？
 
-国内的网络环境复杂，uv 和 nodejs 的安装可能需要访问国外网站。可以尝试寻找其他帮助。
+国内网络环境可能导致安装 uv 和 NodeJS 时无法访问外网资源。以下是解决方案：
+
+##### Python 包使用国内镜像源
+
+使用 `-i` 参数指定国内镜像源：
+
+```bash
+uvx -i https://pypi.tuna.tsinghua.edu.cn/simple mcp-server-fetch
+```
+
+常用国内 PyPI 镜像：
+- 清华大学：`https://pypi.tuna.tsinghua.edu.cn/simple`
+- 阿里云：`http://mirrors.aliyun.com/pypi/simple/`
+- 中国科技大学：`https://mirrors.ustc.edu.cn/pypi/simple/`
+- 华为云：`https://repo.huaweicloud.com/repository/pypi/simple/`
+- 腾讯云：`https://mirrors.cloud.tencent.com/pypi/simple/`
+
+配置示例：
+![国内镜像源配置](https://s3.vaayne.com/vaayne/images/2025/03/1741756014-20250312130654197.png)
+
+##### NodeJS 包使用国内镜像源
+
+使用 `--registry` 参数指定国内 npm 镜像：
+
+```bash
+npx --registry=https://registry.npmmirror.com -y @modelcontextprotocol/server-filesystem
+```
+
+常用 npm 镜像：
+- 淘宝镜像：`https://registry.npmmirror.com`
 
 #### 带有路径的 MCP 服务怎么安装
 

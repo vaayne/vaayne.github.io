@@ -4,7 +4,7 @@ title: Vaayne's Tea House
 theme: PaperMod
 
 permalinks:
-  posts: /posts/:year/:slug/
+  posts: /posts/:year/:slugorcontentbasename/
 
 enableRobotsTXT: true
 
