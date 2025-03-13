@@ -48,6 +48,16 @@ MCP 支持两种传输协议：
 
    ![UV 安装验证](https://s3.vaayne.com/vaayne/images/2025/03/1741701567-SCR-20250311-sxkt.png)
 
+#### 使用 bun 安装 NodeJS （推荐）
+
+1. 前往 [官方网站](https://bun.sh/docs/installation) 复制安装命令，打开 PowerShell 粘贴运行
+
+   ```bash
+   powershell -c "irm bun.sh/install.ps1|iex"
+   ```
+![Bun 安装](https://s3.vaayne.com/vaayne/images/2025/03/1741840956-20250313124236166.png)
+2. 安装完成后，**关闭并重新打开 PowerShell**，输入 `bun --version` 验证安装
+
 #### 安装 NodeJS
 
 1. 前往 [官方网站](https://nodejs.org/en/download) 下载安装包并运行
@@ -70,12 +80,17 @@ MCP 支持两种传输协议：
    brew install uv
    ```
 
-3. 使用 Homebrew 安装 NodeJS
+3. 使用 Homebrew 安装 Bun
+   ```bash
+   brew install oven-sh/bun/bun
+   ```
+
+4. 使用 Homebrew 安装 NodeJS
    ```bash
    brew install node
    ```
 
-4. 在终端分别运行 `uv` 和 `node` 验证安装成功
+5. 在终端分别运行 `uv` 和 `bun` 或者 `node` 验证安装成功
 
    ![Mac 环境验证](https://s3.vaayne.com/vaayne/images/2025/03/1741702304-20250311221144160.png)
 
@@ -108,6 +123,23 @@ STDIO 类型的 MCP 服务在本地运行，可以访问本地文件和系统资
       "command": "npx",
       "args": [
         "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+
+**对于 npx 有问题的可以使用 bunx 代替**，上面的等效于
+```json
+{
+  "mcpServers": {
+    "brave-search": {
+      "command": "bunx",
+      "args": [
         "@modelcontextprotocol/server-brave-search"
       ],
       "env": {
@@ -200,3 +232,11 @@ npx --registry=https://registry.npmmirror.com -y @modelcontextprotocol/server-fi
 ### 如何使用 smithery 安装
 
 目前不支持使用 [smithery](https://smithery.ai) 进行安装。smithery 自动写入配置文件，但我们暂不支持此方式。
+
+### 找不到 npx 或者 uvx 命令
+如果设置 MCP 服务器时提示找不到 `npx` 或 `uvx` 命令，请使用绝对路径，例如：
+`bunx` 换成 `/opt/homebrew/bin/bunx` 或者 `uvx` 换成 `/opt/homebrew/bin/uvx`，具体路径可以使用 `which` 命令查看：
+```bash
+> which bunx
+/opt/homebrew/bin/bunx
+```
