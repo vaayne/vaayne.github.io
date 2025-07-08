@@ -1,12 +1,12 @@
-+++
-date = '2025-03-11T23:02:22+08:00'
-draft = false
-slug = 'how-to-use-mcp-in-cherry-studio'
-title = '如何在 Cherry Studio 中使用 MCP'
-category = ['技术']
-tags = ['MCP', 'Cherry Studio', 'UV', 'LLM']
-description = 'Learn how to configure and use the Model Context Protocol (MCP) in Cherry Studio.'
-+++
+---
+date : '2025-03-11T23:02:22+08:00'
+draft : false
+slug : 'how-to-use-mcp-in-cherry-studio'
+title : '如何在 Cherry Studio 中使用 MCP'
+category : ['技术']
+tags : ['MCP', 'Cherry Studio', 'UV', 'LLM']
+description : 'Learn how to configure and use the Model Context Protocol (MCP) in Cherry Studio.'
+---
 
 # 在 Cherry Studio 中配置和使用模型上下文协议 (MCP)
 
@@ -98,7 +98,7 @@ MCP 支持两种传输协议：
 
 在 Cherry Studio 中，通过以下步骤添加 MCP 服务器：
 
-1. 进入 `设置 -> MCP 服务器` 
+1. 进入 `设置 -> MCP 服务器`
 2. 点击 `添加服务器` 按钮
 
 ![添加 MCP 服务器入口](https://s3.vaayne.com/vaayne/images/2025/03/1741591547-Pasted%20image%2020250309234257.png)
