@@ -1,6 +1,6 @@
 ---
 date : '2025-12-26T13:02:22+08:00'
-draft : true
+draft : false
 slug : '2025-annual-review'
 title : '巨浪袭来时：2025，适应、重塑与开源'
 category : ['年终总结']
