@@ -1,2 +1,25 @@
 [tools]
 hugo = "0.152.2"
+
+[tasks.build]
+description = "Build the Hugo site"
+run = "hugo build"
+
+[tasks.serve]
+description = "Serve the Hugo site locally with drafts"
+run = "hugo server -D"
+
+[tasks.new]
+description = "Create a new post (usage: mise run new <post-name>)"
+usage = '''
+arg "<name>" help="Name of the new post with hyphens instead of spaces"
+'''
+run = "hugo new content posts/${usage_name}.md"
+
+[tasks.clean]
+description = "Clean the public directory"
+run = "rm -rf public"
+
+[tasks.deploy]
+description = "Build for production"
+run = "hugo --minify"

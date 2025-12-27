@@ -2,13 +2,11 @@
 date : '2025-12-26T13:02:22+08:00'
 draft : false
 slug : '2025-annual-review'
-title : '巨浪袭来时：2025，适应、重塑与开源'
+title : '巨浪袭来时：适应、重塑与开源'
 category : ['年终总结']
 tags : ['AI', 'Cherry Studio', 'YU7', '2025']
-description : '回顾 2025 年的技术变革与个人成长，展望未来的发展方向。'
+description : '2025 年终总结'
 ---
-
-# 巨浪袭来时：2025，适应、重塑与开源
 
 AI 界一日，人间界一年。
 
@@ -16,7 +14,7 @@ AI 界一日，人间界一年。
 
 ## 从 Copy Paste 到 Vibe Coding
 
-记得是在6月份，我们公司集体去青岛团建，到达的当天我在推特上刷到了很多人对 Claude Code 的赞赏，我立刻意识到这是一款必须尝试的工具。由于只有 Max 用户才能使用 Opus 模型， 很多人也是说只有 Opus 才能完整的发挥 CC 的全部潜能，我就毫不犹豫地购买了 $100 的 Max 订阅，想看看最强的编程模型究竟能带来怎样的体验。
+记得是在 6 月份，我们公司集体去青岛团建，到达的当天我在推特上刷到了很多人对 Claude Code 的赞赏，我立刻意识到这是一款必须尝试的工具。由于只有 Max 用户才能使用 Opus 模型， 很多人也是说只有 Opus 才能完整的发挥 CC 的全部潜能，我就毫不犹豫地购买了 $100 的 Max 订阅，想看看最强的编程模型究竟能带来怎样的体验。
 
 当晚聚餐后我早早回到酒店，开始使用 Claude Code。第一次真实体验到 AI Agent 的工作方式，震撼之情难以言表。虽然 Manus 早已推出 Agent 功能，并有不少 KOL 在推广，但我一直认为那是营销噱头，缺乏实际操作体验。这是我第一次真实地触摸到了什么是 AI Agent。
 
@@ -27,7 +25,7 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 
 抛开 Anthropic 的企业文化不谈，我认为 2025 年，Anthropic 在 AI 编程领域的贡献是最大的。从 MCP、Agent Skill、Claude Code、Claude Agent SDK 等各种概念的推出，到 Sonnet 4.0 和 Opus 4.5 模型的发布，每一个都极大推动了整个行业的发展。相比之下，OpenAI 只能在后面紧追不舍，直到 GPT 5.2 才只能在模型层面将将追上，其他如 Codex CLI 和生态系统仍有很大差距。Google 在编程领域更是远远落后，直到 Antigravity 引入 Opus，大家才开始真正使用。
 
-特别想提一下 Claude Agent SDK。有了这个 SDK，很多 Agent 不再需要从零开始编写，只需套用这个 SDK 即可。它帮助我们管理 Agent 的整个生命周期，我们只需提供合适的 Context，如 System Prompt、MCP Tools、Skills 等，而这些都是独立于 Agent 本身的。更重要的是，这不仅限于编程领域，任何行业都可以应用，只需提供相关行业的 Skills 和 Tools。此外，Chat Bot 也正从传统的 Chat 模式向 Agent 模式转变，例如之前的 ChatBots如 [ChatWise](https://chatwise.app/) 做的更多的是支持不同的 LLM Providers，支持 MCP；而 12月份 [yetone](https://x.com/yetone) 发布的 [Alma](https://alma.now/) 则明显就不只是 Chat，更多的是 Agent 了。
+特别想提一下 Claude Agent SDK。有了这个 SDK，很多 Agent 不再需要从零开始编写，只需套用这个 SDK 即可。它帮助我们管理 Agent 的整个生命周期，我们只需提供合适的 Context，如 System Prompt、MCP Tools、Skills 等，而这些都是独立于 Agent 本身的。更重要的是，这不仅限于编程领域，任何行业都可以应用，只需提供相关行业的 Skills 和 Tools。此外，Chat Bot 也正从传统的 Chat 模式向 Agent 模式转变，例如之前的 ChatBots 如 [ChatWise](https://chatwise.app/) 做的更多的是支持不同的 LLM Providers，支持 MCP；而 12 月份 [yetone](https://x.com/yetone) 发布的 [Alma](https://alma.now/) 则明显就不只是 Chat，更多的是 Agent 了。
 
 ## Cherry Studio 与开源
 
@@ -36,7 +34,7 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 ### MCP
 2025 年初，MCP（模型上下文协议）概念刚刚兴起时，我便开始为 Cherry Studio 集成 MCP 功能。
 
-3月份的时候，大家还不了解 MCP，更不知道如何实现。最初我尝试了一版完全基于 function call（现称 tool use）的实现，但由于当时许多模型尚不支持 function call，或支持不一致，社区中出现了大量 issues。随后，我又做了一版基于 prompt 的实现，通过一些 hack 使所有模型都能支持 MCP。为了帮助用户解决环境配置问题，我还在 Cherry Studio 中集成了快速安装 bun 和 uv 的功能。
+3 月份的时候，大家还不了解 MCP，更不知道如何实现。最初我尝试了一版完全基于 function call（现称 tool use）的实现，但由于当时许多模型尚不支持 function call，或支持不一致，社区中出现了大量 issues。随后，我又做了一版基于 prompt 的实现，通过一些 hack 使所有模型都能支持 MCP。为了帮助用户解决环境配置问题，我还在 Cherry Studio 中集成了快速安装 bun 和 uv 的功能。
 
 虽然现在 MCP 的热度下降了，但是给 Cherry Studio 添加 MCP 支持的经历让我学到了很多。
 
@@ -59,16 +57,15 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 
 当时的实现主要有两个 API，一个上提供 `/chat/completions` API，它可以把 OpenAI Chat Completion 的模型供其它 App 使用；另一个是 MCP 服务，可以把 Cherry Studio 作为 MCP 管理的客户端，通过 StreamableHTTP 协议提供 MCP 功能。
 
-有了这两个 APIs，Cherry Studio 本身就可以作为一个 Proxy，在Cherry Studio 中添加各种 LLM Providers，然后通过 API 给其它 App 使用。不用在每个 APP 中再配置一遍。而提供 Streamable HTTP 协议的 MCP 服务，更是让用户可以直接在 Cherry Studio 中只启动一个 stdio 的 MCP，但是其它 App 可以通过 Streamable HTTP 协议来连接这个 MCP，而不用再启动一个 stdio 的进程了。
+有了这两个 APIs，Cherry Studio 本身就可以作为一个 Proxy，在 Cherry Studio 中添加各种 LLM Providers，然后通过 API 给其它 App 使用。不用在每个 APP 中再配置一遍。而提供 Streamable HTTP 协议的 MCP 服务，更是让用户可以直接在 Cherry Studio 中只启动一个 stdio 的 MCP，但是其它 App 可以通过 Streamable HTTP 协议来连接这个 MCP，而不用再启动一个 stdio 的进程了。
 
 最近 yetone 等 Alma 提供的 API Proxy 功能，得到了大家的一致好评。其实 Cherry Studio 十月份就提供了类似的功能，但是一我不太会宣传，二是 yetone 实现的是 Anthropic 的 API，而我们之前的实现只是 OpenAI 的 Chat Completion API。基于 Anthropic 的好处是，现在 Claude Code 这类的 Coding Agent 更火了，大家有更多这类 Proxy 的需求。
-
 
 ### Agent
 
 六月份的时候接触到了 Claude Code, 被它强大的 Agent 功能震撼到了，并且意识到虽然叫 Claude Code 但是它其实是通用的 Agent，各行各业都适用，所以我七月就开始基于 Claude Agent SDK （当时还叫 Claude Code SDK） 做了一版简单的 Agent 集成，但是也是因为工作上的事情，还有 Cherry 本身的情况，就搁置了一直没有 merge 进去。
 
-后来十月份的时候 Agent 的概念更火了，大家都开始做 Agent 了，Cherry Studio 里面大家也一致把 Agent 作为最高优先级的功能来做了，所以我又重头开始实现了一版 Agent 集成，因为这次大家都知道这个很重要，大家一起帮忙，做起来就快很多，然后1.7 版本就上了。
+后来十月份的时候 Agent 的概念更火了，大家都开始做 Agent 了，Cherry Studio 里面大家也一致把 Agent 作为最高优先级的功能来做了，所以我又重头开始实现了一版 Agent 集成，因为这次大家都知道这个很重要，大家一起帮忙，做起来就快很多，然后 1.7 版本就上了。
 
 ### 总结
 
@@ -77,7 +74,6 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 我参与 Cherry Studio 开发有个很重要的原因是，我希望可以 AI 平权，普通人也可以使用最先进的 AI 模型，AI 技术，而不用被平台绑架，可以自己控制数据。国外有御三家，国内有豆包等平台，这些平台都在捆绑用户数据，用户数据都在平台手里，用户是没有选择权的。我希望通过 Cherry Studio 这种开源项目，让用户可以自己选择使用什么模型，自己控制数据。
 
 但同时我也看到 Cherry Studio 本身变得越来越复杂，普通人使用门槛越来越高，离我的期望越来越远了。我更希望是有一个类似 ChatGPT 一样简单又复杂的工具，ChatGPT 的 UI 无比的简单，但是它实现的功能却非常复杂强大。我希望 Cherry Studio 未来也能走这条路，既有强大的功能，又有简单易用的界面，让更多人可以使用。
-
 
 ## YU7 与智能驾驶
 
@@ -90,16 +86,16 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 ### 优点
 - 外观符合我的审美
 - 配置足够丰富，电池，芯片，电机都很不错
-- 续航表现很好，实际使用中满电可以跑500多公里
+- 续航表现很好，实际使用中满电可以跑 500 多公里
 - 800V 快充很够用（5C 更快），现在去高速服务区上个卫生间来回的时候就可以走了，基本不用多等
 - 车机是我体验过最好的，加上天际屏，整体体验非常棒
 - 后排乘坐体验很好，靠背可以调节很大角度，长途乘坐也不累
-- 车内很安静，120码以下几乎听不到噪音
+- 车内很安静，120 码以下几乎听不到噪音
 
 ### 缺点
 - 前排座椅太短，对腿部支撑不够，长途驾驶还是会累
-- 音响效果一般，虽然是25个扬声器的高配，但整体效果还是很一般（最近升级了系统好一点了）
-- 标配轮胎和轮毂表现一般，我选配了20寸轮毂，胎偏薄
+- 音响效果一般，虽然是 25 个扬声器的高配，但整体效果还是很一般（最近升级了系统好一点了）
+- 标配轮胎和轮毂表现一般，我选配了 20 寸轮毂，胎偏薄
 - 车内后视镜不是流媒体的，使用起来不太方便
 
 ### 辅助驾驶
@@ -124,7 +120,6 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 换了 YU7 之后，我感觉车不再仅仅是一个代步工具，它更像是一位随行的助手。开车时，仿佛车里住着一个小精灵——它熟悉你的偏好，时刻帮你关注路况，疲劳时替你掌控方向盘，还能为你导航、播放音乐。语音交互在车内场景下显得格外自然，加上这两年 LLM 的快速发展，车载大模型的表现也已相当出色。
 
 人类的一大优势在于善用工具。当你真正理解辅助驾驶的能力边界后，充分利用它便能带来显著的体验提升。这与 AI 编程的逻辑如出一辙——从 AI 辅助编程中获益最多的往往是资深程序员，因为他们深谙 AI 的边界所在，能够更精准地借助 AI 提升自己的效率。
-
 
 ## 回顾与展望
 

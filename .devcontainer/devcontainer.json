@@ -12,7 +12,8 @@
 		"ghcr.io/devcontainers/features/hugo:1": {
 			"extended": true,
 			"version": "latest"
-		}
+		},
+		"ghcr.io/devcontainers-extra/features/mise:1": {}
 	},
 	"customizations": {
 		"vscode": {
