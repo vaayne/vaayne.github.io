@@ -6,6 +6,10 @@ title : '巨浪袭来时：适应、重塑与开源'
 category : ['年终总结']
 tags : ['AI', 'Cherry Studio', 'YU7', '2025']
 description : '2025 年终总结'
+cover:
+    image: "https://s3.vaayne.com/vaayne/images/2026/01/1767259922-Gemini_Generated_Image_tcx7y4tcx7y4tcx7.png"
+    caption: "2025 AI Agents" # display caption under cover
+    relative: false # when using page bundles set this to true
 ---
 
 AI 界一日，人间界一年。
@@ -40,7 +44,6 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 
 [Google Trends MCP](https://trends.google.com/trends/explore?date=2025-01-01%202025-12-31&q=%2Fg%2F11x5hnm0vb&hl=en)
 
-![2025-google-trends-mcp](../../assets/images/2025-google-trends-mcp.png)
 
 ### Memory
 
@@ -79,7 +82,6 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 
 今年对我来说还有一件大事就是买了小米 YU7 Max，虽然这款车争议非常大，我却很喜欢它。
 
-![YU7](../../assets/images/YU7.png)
 
 简单列一下优缺点
 
