@@ -2,7 +2,7 @@
 date : '2025-12-26T13:02:22+08:00'
 draft : false
 slug : '2025-annual-review'
-title : '巨浪袭来时：适应、重塑与开源'
+title : '【2025 年终总结】巨浪袭来时：适应、重塑与开源'
 category : ['年终总结']
 tags : ['AI', 'Cherry Studio', 'YU7', '2025']
 description : '2025 年终总结'
