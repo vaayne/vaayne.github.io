@@ -1,14 +1,15 @@
 ---
-date : '2025-03-09T23:55:23+08:00'
-draft : false
-slug : 'mcp-guide'
-title : 'MCP 协议完全指南'
-tags : ['AI', 'MCP', 'LLM', '开发']
-categories : ['技术']
-description : '深入解析模型上下文协议 (MCP) 的架构、工作原理及应用场景，帮助开发者了解如何利用 MCP 增强 AI 应用的能力与灵活性。'
+date: "2025-03-09T23:55:23+08:00"
+draft: false
+slug: "mcp-guide"
+title: "MCP 协议完全指南"
+tags: ["AI", "MCP", "LLM", "开发"]
+categories: ["技术"]
+description: "深入解析模型上下文协议 (MCP) 的架构、工作原理及应用场景，帮助开发者了解如何利用 MCP 增强 AI 应用的能力与灵活性。"
 ---
 
 ## 引言
+
 模型上下文协议 (Model Context Protocol, MCP) 是近期 AI 领域的最热门的话题，它为大型语言模型提供了与外部世界交互的标准化方式。本文将深入介绍 MCP 的架构、工作原理、开发方法及其应用场景，帮助读者全面了解这一协议如何增强 AI 应用的能力和灵活性。
 
 ## 什么是 MCP
@@ -18,6 +19,7 @@ description : '深入解析模型上下文协议 (MCP) 的架构、工作原理�
 基于 JSON-RPC（一种使用 JSON 编码的远程过程调用协议）构建的 MCP 提供了一种面向客户端和服务器之间上下文交换和采样协调的有状态会话协议。
 
 ### MCP 的架构
+
 ![](https://s3.vaayne.com/vaayne/images/2025/03/1741591536-Pasted%20image%2020250309222148.png)
 
 MCP 采用客户端-服务器模型，其核心组件包括：
@@ -64,6 +66,7 @@ Tool Call 是一种机制，它告知 LLM 有哪些工具可供使用，随后 L
 ## MCP 协议讲解
 
 MCP 协议主要分为这几大部分
+
 - 消息格式
 - 生命周期
 - 传输协议
@@ -75,6 +78,7 @@ MCP 协议主要分为这几大部分
 这里面其它的都好理解，不理解也没有关系，SDK 都会很好的包装起来，唯独传输协议需要特别关注一下
 
 现在 MCP 支持下面传输协议
+
 1. stdio （标准输入/输出）：通过标准 I/O 进行通信
 2. HTTP with Server-Sent Events (SSE)：通过 HTTP 与外部服务进行通信，SSE 是一种允许服务器向客户端推送实时更新的技术
 3. 自己实现 [传输协议](https://spec.modelcontextprotocol.io/specification/2024-11-05/basic/transports/#custom-transports)
@@ -83,12 +87,17 @@ MCP 协议主要分为这几大部分
 
 我们看到官方的例子里面都是提供的这种例子，通过 stdio 的好处是 server 运行在本机，数据更安全，坏处是占用本机的资源，每到一个新的环境需要重新配置一遍。
 例如：
+
 ```json
 {
   "mcpServers": {
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/files"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/path/to/allowed/files"
+      ]
     },
     "git": {
       "command": "uvx",
@@ -103,13 +112,18 @@ MCP 协议主要分为这几大部分
     },
     "postgres": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost/mydb"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "postgresql://localhost/mydb"
+      ]
     }
   }
 }
 ```
 
 它的具体流程是这样的：
+
 1. 本机的 Client 启动一个子进程来运行 Server
 2. Client 给 Server 发送 JSON-RPC 格式的消息，而具体发送的方式就是将消息写入 stdin，消息发送结束之后再发送一个换行符，这样 Server 就知道消息接收完毕，可以开始处理了
 3. Server 处理完之后，也生成 JSON-RPC 格式的消息，并写到 stdout，并且也可以记录 log 到 stderr，log 的格式就是 UTF-8 字符串
@@ -117,15 +131,18 @@ MCP 协议主要分为这几大部分
 5. 如果不需要的 Server 了，Client 就可以终止运行这个 Server 的子进程
 
 ![](https://s3.vaayne.com/vaayne/images/2025/03/1741591541-Pasted%20image%2020250309224410.png)
+
 #### sse
 
 SSE 格式中，Server 可以作为一个独立的进程运行，可以运行在本机也可以运行在远程服务器上。这种就类似传统的 API 服务，API server 可以同时支持多个 Clients 的接入，并且对本地运行的环境没有要求，所以理论上我在手机上也是可以使用的。劣势就是如果 Server 在远程，数据都会经过远程服务器。
 
 SSE 的情况下，Server 必须提供两个 API：
+
 1. SSE 端点，作为 Client 和 Server 建立连接和接收消息的端点
 2. HTTP POST 端点，用于 Client 给 Server 发送消息的端点
 
 具体流程如下：
+
 1. 客户端通过 SSE 端点向 Server 请求建立连接
 2. Server 收到 Client 的请求，并返回 POST 端点给 Client （后续 Client 需要通过这个 POST 端点给 Server 发送消息），双方建立连接
 3. Client 通过 POST 端点给 Server 发送消息，Server 处理消息，并通过 SSE 端点返回给 Client
@@ -138,14 +155,17 @@ SSE 的情况下，Server 必须提供两个 API：
 [MCP servers](https://github.com/modelcontextprotocol/servers) MCP 官方的 servers 合集
 
 MCP Server 提供三项能力
+
 - Prompts：预定义模板或指令，用于指导语言模型交互
 - Resources：为模型提供额外上下文的结构化数据或内容
 - Tools：允许模型执行操作或检索信息的可执行函数
 
 ### Prompts
+
 Prompts 的场景是我可以在 Server 端管理一些预定义的 prompts, 这样做的好处是，我可以随时在 Server 端更新 Prompt 而无需更改应用端的代码
 
 **list prompts request**
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -156,7 +176,9 @@ Prompts 的场景是我可以在 Server 端管理一些预定义的 prompts, 这
   }
 }
 ```
+
 **list prompts response**
+
 ```json
 {
   "jsonrpc": "2.0",
@@ -191,8 +213,9 @@ Resources 比较难以理解的是它的使用场景，我之前见过一个例�
 Tools 则是 MCP Server 最常用也最实用的功能，这个 Tool 和 OpenAI 函数调用里面的 Tool 是一样的，都是允许 LLM 和外部世界进行交互的工具。
 
 API 主要有两个
-1. ``tools/list`` 列出 Server 支持的所有工具
-2. ``tools/call``  Client 请求 Server 去执行某个工具，并将结果返回
+
+1. `tools/list` 列出 Server 支持的所有工具
+2. `tools/call` Client 请求 Server 去执行某个工具，并将结果返回
 
 流程图如下，和 Function Call 是一样的。
 
@@ -223,6 +246,7 @@ def get_greeting(name: str) -> str:
 ```
 
 启动 Server
+
 ```bash
 mcp dev server.py
 ```
@@ -274,6 +298,7 @@ MCP 作为一种标准化协议，极大地简化了大语言模型与外部世�
 MCP 的核心价值在于其标准化和可扩展性，它不仅降低了开发复杂度，还提高了 AI 应用的互操作性。随着越来越多的应用支持 MCP，我们可以预见未来 AI 生态系统将变得更加开放和强大。
 
 ## 资源与参考
+
 - [MCP 官方网站](https://modelcontextprotocol.io/)
 - [MCP 规范文档](https://spec.modelcontextprotocol.io/)
 - [MCP GitHub 仓库](https://github.com/modelcontextprotocol)

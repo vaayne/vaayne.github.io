@@ -1,15 +1,15 @@
 ---
-date : '2025-12-26T13:02:22+08:00'
-draft : false
-slug : '2025-annual-review'
-title : '【2025 年终总结】巨浪袭来时：适应、重塑与开源'
-category : ['年终总结']
-tags : ['AI', 'Cherry Studio', 'YU7', '2025']
-description : '2025 年终总结'
+date: "2025-12-26T13:02:22+08:00"
+draft: false
+slug: "2025-annual-review"
+title: "【2025 年终总结】巨浪袭来时：适应、重塑与开源"
+category: ["年终总结"]
+tags: ["AI", "Cherry Studio", "YU7", "2025"]
+description: "2025 年终总结"
 cover:
-    image: "https://s3.vaayne.com/vaayne/images/2026/01/1767259922-Gemini_Generated_Image_tcx7y4tcx7y4tcx7.png"
-    caption: "2025 AI Agents" # display caption under cover
-    relative: false # when using page bundles set this to true
+  image: "https://s3.vaayne.com/vaayne/images/2026/01/1767259922-Gemini_Generated_Image_tcx7y4tcx7y4tcx7.png"
+  caption: "2025 AI Agents" # display caption under cover
+  relative: false # when using page bundles set this to true
 ---
 
 AI 界一日，人间界一年。
@@ -23,6 +23,7 @@ AI 界一日，人间界一年。
 当晚聚餐后我早早回到酒店，开始使用 Claude Code。第一次真实体验到 AI Agent 的工作方式，震撼之情难以言表。虽然 Manus 早已推出 Agent 功能，并有不少 KOL 在推广，但我一直认为那是营销噱头，缺乏实际操作体验。这是我第一次真实地触摸到了什么是 AI Agent。
 
 Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横空出世到 Claude Code 的 出现，可以划分为三个阶段：
+
 1. **ChatGPT 阶段**：需要手动复制粘贴上下文，本质上仍是手动编程，所有代码都需自己处理。
 2. **Copilot 阶段**：借助类似 VSCode Copilot 插件或 Cursor 这类编辑器，AI 可以自动感知上下文，自动补全代码，预测下一个编辑内容。Cursor 的体验无出其右。但 Copilot 阶段仍只能算是半自动化编程，省略的只是复制粘贴的部分。
 3. **Claude Code 阶段**：AI Agent 全自动管理上下文，修复错误，提交 PR。至此，有了 Vibe Coding，编程进入了一个全新的时代。人们开始从 Prompt Engineer 进化为 Context Engineer。现在，我们不再需要精心设计一大段 Prompt，而是提供一系列相关的 Context，让 AI 自动提取有效信息来完成任务。我们需要做的只是提供更准确的 Context 和更好的 Context 管理方式。
@@ -36,6 +37,7 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 2025 年也是我参与开源项目最多的一年，[Cherry Studio](https://github.com/CherryHQ/cherry-studio) 作为我主要参与的项目，给了我很多锻炼的机会。通过为 Cherry Studio 添加 MCP 支持、记忆管理功、API 服务以及 Agent 的实现，我不仅更深入地理解了 AI Agent，也结识到了很多志同道合的朋友。
 
 ### MCP
+
 2025 年初，MCP（模型上下文协议）概念刚刚兴起时，我便开始为 Cherry Studio 集成 MCP 功能。
 
 3 月份的时候，大家还不了解 MCP，更不知道如何实现。最初我尝试了一版完全基于 function call（现称 tool use）的实现，但由于当时许多模型尚不支持 function call，或支持不一致，社区中出现了大量 issues。随后，我又做了一版基于 prompt 的实现，通过一些 hack 使所有模型都能支持 MCP。为了帮助用户解决环境配置问题，我还在 Cherry Studio 中集成了快速安装 bun 和 uv 的功能。
@@ -43,7 +45,6 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 虽然现在 MCP 的热度下降了，但是给 Cherry Studio 添加 MCP 支持的经历让我学到了很多。
 
 [Google Trends MCP](https://trends.google.com/trends/explore?date=2025-01-01%202025-12-31&q=%2Fg%2F11x5hnm0vb&hl=en)
-
 
 ### Memory
 
@@ -82,10 +83,10 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 
 今年对我来说还有一件大事就是买了小米 YU7 Max，虽然这款车争议非常大，我却很喜欢它。
 
-
 简单列一下优缺点
 
 ### 优点
+
 - 外观符合我的审美
 - 配置足够丰富，电池，芯片，电机都很不错
 - 续航表现很好，实际使用中满电可以跑 500 多公里
@@ -95,6 +96,7 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 - 车内很安静，120 码以下几乎听不到噪音
 
 ### 缺点
+
 - 前排座椅太短，对腿部支撑不够，长途驾驶还是会累
 - 音响效果一般，虽然是 25 个扬声器的高配，但整体效果还是很一般（最近升级了系统好一点了）
 - 标配轮胎和轮毂表现一般，我选配了 20 寸轮毂，胎偏薄
@@ -107,6 +109,7 @@ Claude Code 将 AI 编程推向了一个新的高度。我认为从 ChatGPT 横�
 现阶段所有车辆的智能驾驶在城区都很一般，无论它怎么宣传，基本上都是鸡肋。但是高速上的辅助驾驶已经非常实用了。这种情况就和编程领域的 AI Agent 一样，一部分场景下非常好用，另一部分场景下完全不行。但是趋势不可挡，未来几年这一块一定会越来越好。离全自动驾驶不会太远。
 
 小米的辅助驾驶分为三种模式：
+
 - 全速自适应巡航（只控制速度不控制方向）
 - 居中辅助（控制速度，并且可以帮忙保持在路中间）
 - 领航辅助（NOA）在居中辅助的基础上支跟随地图自动选择道路，自主超车，也就是平常说的智驾，NOA 又分高速和城区。

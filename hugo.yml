@@ -21,7 +21,7 @@ params:
   DateFormat: "2006-01-02"
   comments: true
   # theme settings
-  ShowReadingTime: true 
+  ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowShareButtons: true
   ShowPostNavLinks: true

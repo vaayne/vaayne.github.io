@@ -1,11 +1,11 @@
 ---
-date : '2025-03-11T23:02:22+08:00'
-draft : false
-slug : 'how-to-use-mcp-in-cherry-studio'
-title : '如何在 Cherry Studio 中使用 MCP'
-category : ['技术']
-tags : ['MCP', 'Cherry Studio', 'UV', 'LLM']
-description : 'Learn how to configure and use the Model Context Protocol (MCP) in Cherry Studio.'
+date: "2025-03-11T23:02:22+08:00"
+draft: false
+slug: "how-to-use-mcp-in-cherry-studio"
+title: "如何在 Cherry Studio 中使用 MCP"
+category: ["技术"]
+tags: ["MCP", "Cherry Studio", "UV", "LLM"]
+description: "Learn how to configure and use the Model Context Protocol (MCP) in Cherry Studio."
 ---
 
 # 在 Cherry Studio 中配置和使用模型上下文协议 (MCP)
@@ -55,6 +55,7 @@ MCP 支持两种传输协议：
    ```bash
    powershell -c "irm bun.sh/install.ps1|iex"
    ```
+
 ![Bun 安装](https://s3.vaayne.com/vaayne/images/2025/03/1741840956-20250313124236166.png)
 2. 安装完成后，**关闭并重新打开 PowerShell**，输入 `bun --version` 验证安装
 
@@ -116,6 +117,7 @@ STDIO 类型的 MCP 服务在本地运行，可以访问本地文件和系统资
 ![STDIO 类型配置示例](https://s3.vaayne.com/vaayne/images/2025/03/1741591546-Pasted%20image%2020250309234321.png)
 
 **高级配置**：某些 MCP 服务需要环境变量，例如 [Brave Search MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search) 需要 API 密钥：
+
 ```json
 {
   "mcpServers": {
@@ -134,6 +136,7 @@ STDIO 类型的 MCP 服务在本地运行，可以访问本地文件和系统资
 ```
 
 **对于 npx 有问题的可以使用 bunx 代替**，上面的等效于
+
 ```json
 {
   "mcpServers": {
@@ -195,6 +198,7 @@ uvx -i https://pypi.tuna.tsinghua.edu.cn/simple mcp-server-fetch
 ```
 
 常用国内 PyPI 镜像：
+
 - 清华大学：`https://pypi.tuna.tsinghua.edu.cn/simple`
 - 阿里云：`http://mirrors.aliyun.com/pypi/simple/`
 - 中国科技大学：`https://mirrors.ustc.edu.cn/pypi/simple/`
@@ -213,11 +217,13 @@ npx --registry=https://registry.npmmirror.com -y @modelcontextprotocol/server-fi
 ```
 
 常用 npm 镜像：
+
 - 淘宝镜像：`https://registry.npmmirror.com`
 
 #### 带有路径的 MCP 服务怎么安装
 
 某些 MCP 服务未打包到 npm 或 pypi，需要本地运行源代码。先下载代码，安装依赖，再运行。例如：[web-search](https://github.com/pskill9/web-search)
+
 ```json
 {
   "mcpServers": {
@@ -234,8 +240,10 @@ npx --registry=https://registry.npmmirror.com -y @modelcontextprotocol/server-fi
 目前不支持使用 [smithery](https://smithery.ai) 进行安装。smithery 自动写入配置文件，但我们暂不支持此方式。
 
 ### 找不到 npx 或者 uvx 命令
+
 如果设置 MCP 服务器时提示找不到 `npx` 或 `uvx` 命令，请使用绝对路径，例如：
 `bunx` 换成 `/opt/homebrew/bin/bunx` 或者 `uvx` 换成 `/opt/homebrew/bin/uvx`，具体路径可以使用 `which` 命令查看：
+
 ```bash
 > which bunx
 /opt/homebrew/bin/bunx
